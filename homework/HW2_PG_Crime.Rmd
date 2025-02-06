@@ -38,7 +38,11 @@ pg_crime_averages <- pg_crime |> mutate(average_incidents = (Jan + Feb + Mar + A
 
 Examine the new dataframe, `pg_crime_averages`, by clicking on it in the Environment tab in RStudio. Write a couple of sentences describing the average number of incidents per month for each category. Which categories have the highest average number of incidents per month? Which have the lowest? What does this tell you about the pattern of crime in Prince George's County? Are there categories that you have questions about? Why or why not?
 
-ANSWER HERE There are an astounding amount of what I believe are car accidents every month. Car accidents are the crime with the highest average amount of incidents per month. Homicides are the crime with the lowest amount of crimes per month. Now I think it's generally acknowledged that homicides should be near the bottom of the crimes per month, but I think it could be worth comparing that number to state averages. I'll round that homicides number down to 5 to be generous, but that means that in a year at least 60 people are getting murdered. That number seems like it could be very high to me. Car accidents also seems worth checking out to me? That number also seems like it could be really high. What are the police reporting as a car accident? Are these serious accidents or does it include fender benders and scrapes? Is almost 500 accidents a year normal statewide or nationally?
+ANSWER HERE 
+There are an astounding amount of what I believe are car accidents every month. Car accidents are the crime with the highest average amount of incidents per month. Homicides are the crime with the lowest amount of crimes per month. Now I think it's generally acknowledged that homicides should be near the bottom of the crimes per month, but I think it could be worth comparing that number to state averages. I'll round that homicides number down to 5 to be generous, but that means that in a year at least 60 people are getting murdered. That number seems like it could be very high to me. Car accidents also seems worth checking out to me? That number also seems like it could be really high. What are the police reporting as a car accident? Are these serious accidents or does it include fender benders and scrapes? Is almost 500 accidents a year normal statewide or nationally?
+
+Disclaimer:
+I was not able to figure out (though I think I could if I tried a little harder) how to get the N/A inputs to not mess up the residential robbery data (I think it has something to do with na.omit or na.exclude but I couldn't get it to work), so the averages data set and all the following data sets will not include that data (In real life I would jsut hand calculate it).
 
 ### Task 6: Testing a Theory
 
@@ -52,15 +56,13 @@ summer_crime_averages <- pg_crime_averages |> mutate(june_change = (Jun - averag
 
 Look at the `summer_crime_averages` dataframe by clicking on it in the Environment tab in RStudio. Write a couple of sentences describing the percentage change in the average number of incidents per month for each category of crime for the months of June, July, and August. Do you see any patterns? What does this tell you about the theory that crime is more likely to occur in the summer months?
 
-ANSWER HERE
-I would say that it mostly disproves the theory, or at least proves that the theory is too broad in scope. Yes some crime does look it increases slightly in some months. Homicide rates do appear to go up across the board, but across all those months it looks like theft decreased slightly. So to that 'all crime" increases in summer months I think would be wrong, but looking at the data over many years to see if certain crimes do increase in the summer could be worth looking into.
+ANSWER HERE I would say that it mostly disproves the theory, or at least proves that the theory is too broad in scope. Yes some crime does look it increases slightly in some months. Homicide rates do appear to go up across the board, but across all those months it looks like theft decreased slightly. So to that 'all crime" increases in summer months I think would be wrong, but looking at the data over many years to see if certain crimes do increase in the summer could be worth looking into.
 
 ### Task 8: What's the Story?
 
 Write up a lede and nutgraf of a story focused on the crime data in Prince George's County. It could be from any of the dataframes you've created in this assignment. The lede should be a single sentence that summarizes the most important information in the data. The nutgraf should be a paragraph that provides more context and explains why the data is important.
 
-ANSWER HERE
-There are nearly six homicides a month in Prince Geroges County, according to police reports.
+ANSWER HERE There are nearly six homicides a month in Prince Geroges County, according to police reports.
 
 Data from the year end crime report shows that there were 70 homicides in Prince George's County in 2024. On average close to six people were killed per month, with the most killings happening in June.
 
