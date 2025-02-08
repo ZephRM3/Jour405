@@ -9,6 +9,7 @@ In this assignment, we will be working with a dataset containing information abo
 You will need to load the tidyverse library
 
 ```{r}
+library(tidyverse)
 ```
 
 Then you'll load the data from the web. The URL for the data is: https://raw.githubusercontent.com/dwillis/jour405/refs/heads/main/data/biden_wh_salaries_2024.csv. You will create a dataframe called `wh_salaries` that contains the data from this URL.
@@ -16,6 +17,7 @@ Then you'll load the data from the web. The URL for the data is: https://raw.git
 ### Task 2: Load the Data and Describe It
 
 ```{r}
+wh_salaries <- read_csv("https://raw.githubusercontent.com/dwillis/jour405/refs/heads/main/data/biden_wh_salaries_2024.csv")
 ```
 ### Task 3: Describe the Data
 
@@ -23,12 +25,14 @@ You should examine that dataframe carefully by clicking on it in the Environment
 
 ANSWER HERE
 
+The dataframe consists of four columns: Name, status, salary, and title. In status it seems there are both people who ar "employed" or who are a "detailee." There are also some employees who are unpaid, whose salaries are 0 dollars which I could see causing problems in our analyses.
+
 ### Task 4: Calculate the Mean and Median of the Salaries
 
 Write code to calculate the mean and median of the salaries in the dataset using the `summarize()` function. You don't need to make a new dataframe, just display the results.
 
 ```{r}
-
+wh_salaries |> summarize(mean_value = mean(salary), median_value = median(salary))
 ```
 
 ### Task 5: Add in the minimum and maximum salaries
@@ -36,7 +40,7 @@ Write code to calculate the mean and median of the salaries in the dataset using
 Take the code you just wrote and add in the minimum and maximum salaries (the functions for that are `min()` and `max()`). Your results should show four columns: mean_salary, median_salary, min_salary, max_salary.
 
 ```{r}
-
+wh_salaries |> summarize(mean_salary = mean(salary), median_salary = median(salary), min_salary = min(salary), max_salary = max(salary))
 ```
 
 ### Task 6: Describe the Results
@@ -44,9 +48,11 @@ Take the code you just wrote and add in the minimum and maximum salaries (the fu
 Write a couple of sentences describing the results of your analysis. What do the mean and median salaries tell you about the data? What do the minimum and maximum salaries tell you? Are there any outliers in the data?
 
 ANSWER HERE
+The average paid workers at the White House get paid a little over 100k year on average. The mean and the median salaries are roughly similar in my opinion (only a couple of thousand a part), so I think one could argue that the data is roughly symmetric. There do seem to be some outliers, especially the unpaid worker, who I would guess drag the average down somewhat.
 
 ### Task 7: Story Idea
 
 Based on the data, what is your best story idea? What is the next step you would take to develop that story idea?
 
 ANSWER HERE
+I think that just scrolling through the data that their does seem to be a pattern that more often than not, the nonsalaried workers are not listed as "employees" but as "detailee." This isn't the case all the time, but more often than not it looks like there's a decent chance that a detailee is also unpaid or nonsalaried at least. I think this could be something. I'm not sure what, but the first thing I would do would be to do some research and make calls to find out what the difference between an employee and a detailee is, and why detailees are sometimes unpaid.
