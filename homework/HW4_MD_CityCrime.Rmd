@@ -63,3 +63,19 @@ Per 10,000 people Ocean City has the highest rate of violent and property relate
 ### Task 9: Save Your Work and Put it on GitHub
 
 Save this notebook, then commit it to your local repository. Push the changes to your GitHub repository and submit the URL for this file in ELMS.
+
+### Task 10:
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+md_cities_violent_percentiles <- md_cities_rates |>  mutate(crime_percentile_2020 = ntile(violent_rate_2020, 100))
+```
+
+```{r}
+md_cities_violent_percentiles |> summarize(iqr = IQR(crime_percentile_2020))
+```
+I would not say that this changed my original story idea. Ocean City was still int the 100th percentile for crime. and I'm not really sure how to interpret what the IQR adds. I think that in this case calculating the percentiles and IQR would just give me more vocabulary to describe the data with.
