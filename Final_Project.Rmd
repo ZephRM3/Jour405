@@ -3,3 +3,38 @@ title: "Final_Project"
 output: html_document
 ---
 
+```{r}
+library(tidyverse)
+```
+```{r}
+Stats_2010 = read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHwIEytCodQo5pZYtHgAFKkZ-Pn3HorMtEVewVozgeU7cNxhifg1XZObM-4uClhXYRnDOcMTgXkVGW/pub?output=csv")
+```
+```{r}
+Stats_2011 = read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHwIEytCodQo5pZYtHgAFKkZ-Pn3HorMtEVewVozgeU7cNxhifg1XZObM-4uClhXYRnDOcMTgXkVGW/pub?output=csv")
+```
+```{r}
+Stats_2012 = read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHwIEytCodQo5pZYtHgAFKkZ-Pn3HorMtEVewVozgeU7cNxhifg1XZObM-4uClhXYRnDOcMTgXkVGW/pub?output=csv")
+```
+```{r}
+Stats_2013 = read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHwIEytCodQo5pZYtHgAFKkZ-Pn3HorMtEVewVozgeU7cNxhifg1XZObM-4uClhXYRnDOcMTgXkVGW/pub?output=csv")
+```
+```{r}
+Stats_2014 = read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHwIEytCodQo5pZYtHgAFKkZ-Pn3HorMtEVewVozgeU7cNxhifg1XZObM-4uClhXYRnDOcMTgXkVGW/pub?output=csv")
+```
+```{r}
+Stats_2015 = read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHwIEytCodQo5pZYtHgAFKkZ-Pn3HorMtEVewVozgeU7cNxhifg1XZObM-4uClhXYRnDOcMTgXkVGW/pub?output=csv")
+```
+```{r}
+Stats_2016 = read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHwIEytCodQo5pZYtHgAFKkZ-Pn3HorMtEVewVozgeU7cNxhifg1XZObM-4uClhXYRnDOcMTgXkVGW/pub?output=csv")
+```
+```{r}
+Stats_2017 = read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHwIEytCodQo5pZYtHgAFKkZ-Pn3HorMtEVewVozgeU7cNxhifg1XZObM-4uClhXYRnDOcMTgXkVGW/pub?output=csv")
+```
+```{r}
+Passing_Offsense_2024 = read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTHwIEytCodQo5pZYtHgAFKkZ-Pn3HorMtEVewVozgeU7cNxhifg1XZObM-4uClhXYRnDOcMTgXkVGW/pub?output=csv")
+```
+Findings so far: 
+
+So I initially started off by trying to use AI to find and condense the stats off the internet that I wanted and make clean tables with all the stats that I wanted. I was able to do this with ChatGPT and make tables with passing offense numbers, record, and turnover ratio and then I could just have all the data I needed in clean data sets sperated by season. However I got through 7 seasons and realized that ChatGPT is an idiot and not pulling all the data and leaving entire teams out. This is very annoying, and I spent a lot of time doing that. However, I also was able to pull the data directly from Pro-Football Focus, which is what the Passing Offense 2024 set is.That is an example of what I kind of wanted to avoid, the issue is with that set, is that it has all the passing numbers, but doesn't have the overall turnover ratio or team record which are really essential for my project. Am I going to have to pull all of these stats individually? Also do you think that using AI like I did might not have been such a bad idea? I feel like there's probably a way that AI could make this process much more efficient. 
+
+I did get a lot of expereince converting data into CSV files and then loading them into R and I feel pretty comfortable with that process now which is nice.
