@@ -1,0 +1,223 @@
+---
+title: "FinalProjectFinalNotebook"
+output: html_document
+Zephan Matteson
+---
+```{r}
+library(tidyverse)
+install.packages('corrplot')
+library(corrplot)
+```
+
+Data and Multiple Regression Analysis:
+For this project I was looking to find out of QB performance is now a better indicator of whether a team in the NFL wins or not. To do this I complied data from 10 separate seasons dating back to 2015 (so ten seasons) and ran a multiple regression tests on each season. This was to see whether in each season QB rating was more correlated with winning or whether a teams turnover differential is more correlated with winning. I then coded a correlation matrix for each season just to add a visual element.
+
+Every dataset (2015-2024) was compiled by me by hand from data on Pro-Football Focus, and The Football Database. I pulled the categories I wanted: wins, QB rating, and Turnover Diff, from these websites and put them all into their own Google sheets for each season, and then copied the CSV files of that Google doc into R. The matrix visualizations below are in order from 2015-2024, and the datasets in the environment should also be in order. All of this I coded myself based on the code from the last assignment of the year.
+```{r}
+Stats_2015 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSlihx69rKPirPlFwVbHa0vFVKHXg66DlZSOiQ_Mu1wvdUzgSfsa8fSgOMLLbKrpd4ngCeUG2eCQUec/pub?output=csv")
+model_2015 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2015)
+summary(model_2015)
+selected_vars_2015 <- Stats_2015 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2015)
+corr_matrix_2015 <- cor(selected_vars_2015)
+corrplot(corr_matrix_2015, method = "circle")
+
+Stats_2016 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRGT2pd599nvdN9LEFbTH4TpoYj-7oBg-aum9ZjIHDOIzgW3n9iCJiE4G1tn0bhj2hlDQtaPJbGxVV5/pub?output=csv")
+model_2016 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2016)
+summary(model_2016)
+selected_vars_2016 <- Stats_2016 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2016)
+corr_matrix_2016 <- cor(selected_vars_2016)
+corrplot(corr_matrix_2016, method = "circle")
+
+Stats_2017 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTmq037S5hqbiGRF80TmqI_WySrDoP63A2c80bTFoOMFopI5pRJ6yct3XFkHdnOwzLam3BURDkH8ABL/pub?output=csv")
+model_2017 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2017)
+summary(model_2017)
+selected_vars_2017 <- Stats_2017 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2017)
+corr_matrix_2017 <- cor(selected_vars_2017)
+corrplot(corr_matrix_2017, method = "circle")
+
+Stats_2018 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTGsZO3JLS7I_CpbnO8kbqZoKMTmiPKiMzXAHF9vf0bRAvFWDTzKvoSg9N-iTrG3uOvXF9BJm-JzE0G/pub?output=csv")
+model_2018 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2018)
+summary(model_2018)
+selected_vars_2018 <- Stats_2018 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2018)
+corr_matrix_2018 <- cor(selected_vars_2018)
+corrplot(corr_matrix_2018, method = "circle")
+
+Stats_2019 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vR2y_XtV20kPHN5BsEMW48jscpZvcrP72dFtvW5QAIS2LZsnAwfyIf1CZX83uaW_CjeAM3_b1jLO90E/pub?output=csv")
+model_2019 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2019)
+summary(model_2019)
+selected_vars_2019 <- Stats_2019 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2019)
+corr_matrix_2019 <- cor(selected_vars_2019)
+corrplot(corr_matrix_2019, method = "circle")
+
+Stats_2020 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRhJDReLx9G-xHQ2f8t6B3lE5SqtTsA2YlVG9k51DvK5eYiwILuM67ibOX-fGGpKegahQ17ButCedzu/pub?output=csv")
+model_2020 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2020)
+summary(model_2020)
+selected_vars_2020 <- Stats_2020 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2020)
+corr_matrix_2020 <- cor(selected_vars_2020)
+corrplot(corr_matrix_2020, method = "circle")
+
+Stats_2021 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTFk16ctjzyc-QWqLYd3bqdjL6Zo6EZsm6gtrNmAaQkOavg_zL1Y0WRyTBZAoL2mVhQImbDuUF8xuzf/pub?output=csv")
+model_2021 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2021)
+summary(model_2021)
+selected_vars_2021 <- Stats_2021 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2021)
+corr_matrix_2021 <- cor(selected_vars_2021)
+corrplot(corr_matrix_2021, method = "circle")
+
+Stats_2022 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSyAebnz9POfzmYO3yiMGRj1Zwdr9og2T5BRzBkp6_tnlqxkqUyThKREJ3KXb7_8b-nQ_Z81CgLocD3/pub?output=csv")
+model_2022 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2022)
+summary(model_2022)
+selected_vars_2022 <- Stats_2022 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2022)
+corr_matrix_2022 <- cor(selected_vars_2022)
+corrplot(corr_matrix_2022, method = "circle")
+
+Stats_2023 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vSgwWkNrl_s5ZM5A0toKNFrsuw--Ujp9ywtuYINYXxcO9zN3ZZtXE7m-H7cG_BgvPTFBA2OlgxjAFIc/pub?output=csv")
+model_2023 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2023)
+summary(model_2023)
+selected_vars_2023 <- Stats_2023 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2023)
+corr_matrix_2023 <- cor(selected_vars_2023)
+corrplot(corr_matrix_2023, method = "circle")
+
+Stats_2024 <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vTCK1l0ztdEaLagSHlqpx6oVwFcaCNjTLjv5l4D5NaPjMgcxrjyfrebxhH1j8RxP7PDIGE6rmFllB4W/pub?output=csv")
+model_2024 <- lm(Wins ~ `QB Rating` + `Tunrover Differential`, data = Stats_2024)
+summary(model_2024)
+selected_vars_2024 <- Stats_2024 |>  select(`QB Rating`, `Tunrover Differential`, Wins)
+cor(selected_vars_2024)
+corr_matrix_2024 <- cor(selected_vars_2024)
+corrplot(corr_matrix_2024, method = "circle")
+```
+Analysis: 
+This part of the project I think can show the correlation of a certain season, and looking at it as a whole you can kind of piece together that there may be a slight positive increase in the correlation between rating and wins over the ten years. This also just lays out, and provides the data which. will be used for the more important analysis. The models in general seem to be kind of bad to ok based on the R squared values ranging from like 40% - 80%. 
+
+
+ANOVA Test on QB Rating and Turnover Diff:
+Multiple regression is really the main thing that I wanted to look at, but out of any other test I could run I figured that ANOVA would be the most useful for this project. ChatGPT helped me code this part, especially because I wasn't sure how to combine all the datasets and then break them into groups. However, I was very specific with what I asked, and I thought the results ended up pretty good. 
+```{r}
+all_stats <- bind_rows(
+  mutate(Stats_2015, Year = 2015),
+  mutate(Stats_2016, Year = 2016),
+  mutate(Stats_2017, Year = 2017),
+  mutate(Stats_2018, Year = 2018),
+  mutate(Stats_2019, Year = 2019),
+  mutate(Stats_2020, Year = 2020),
+  mutate(Stats_2021, Year = 2021),
+  mutate(Stats_2022, Year = 2022),
+  mutate(Stats_2023, Year = 2023),
+  mutate(Stats_2024, Year = 2024)
+)
+
+all_stats <- all_stats %>%
+  mutate(QB_Rating_Group = cut(`QB Rating`,
+                               breaks = quantile(`QB Rating`, probs = c(0, 1/3, 2/3, 1), na.rm = TRUE),
+                               labels = c("Low", "Medium", "High"),
+                               include.lowest = TRUE))
+anova_model <- aov(Wins ~ QB_Rating_Group, data = all_stats)
+summary(anova_model)
+TukeyHSD(anova_model)
+
+ggplot(all_stats, aes(x = QB_Rating_Group, y = Wins)) +
+  geom_boxplot(fill = "skyblue", color = "black") +
+  labs(title = "Wins by QB Rating Group",
+       x = "QB Rating Group",
+       y = "Wins") +
+  theme_minimal()
+
+all_stats <- all_stats %>%
+  mutate(TO_Diff_Group = cut(`Tunrover Differential`,
+                             breaks = quantile(`Tunrover Differential`, probs = c(0, 1/3, 2/3, 1), na.rm = TRUE),
+                             labels = c("Low", "Medium", "High"),
+                             include.lowest = TRUE))
+
+# Run the ANOVA test to see if Wins differ across Turnover Differential groups
+anova_model_to <- aov(Wins ~ TO_Diff_Group, data = all_stats)
+summary(anova_model_to)
+
+# Post-hoc test to see which groups differ significantly
+TukeyHSD(anova_model_to)
+
+# Visualize the differences in Wins across Turnover Differential groups
+ggplot(all_stats, aes(x = TO_Diff_Group, y = Wins)) +
+  geom_boxplot(fill = "lightgreen", color = "black") +
+  labs(title = "Wins by Turnover Differential Group",
+       x = "Turnover Differential Group",
+       y = "Wins") +
+  theme_minimal()
+```
+Analysis: 
+I think that what this ANOVA test shows is that both of the variables I looked at for this project; QB Rating, and Turnover Differential, are very good indicators of winning. If you have a high QB rating you're likely to win over ten games. If you have a high positive turnover diff, you're also very likely to win over ten games. I think that this may point toward the fact that these two variable themselves might be correlated. If you have a high rating as a QB it's probably because you're not turning the ball over a lot, which means your teams diff is going to better on average.
+
+Correlation Coefficient Data Viz for QB Rating and Turnover Diff from 2015-2024:
+I wanted to make a chart that visualized the change in correlation over the ten seasons I looked at. This is the heart of what I wanted to see in this project. ChatGPT was again used, but I again tried to be as specific as I could be in getting it to help me isolate the correlation coefficients from the data sets and then graph them. I was unsure of how to pull those specific data points myself and put them in the ggplot stuff.
+
+```{r}
+yearly_data <- list(
+  `2015` = selected_vars_2015,
+  `2016` = selected_vars_2016,
+  `2017` = selected_vars_2017,
+  `2018` = selected_vars_2018,
+  `2019` = selected_vars_2019,
+  `2020` = selected_vars_2020,
+  `2021` = selected_vars_2021,
+  `2022` = selected_vars_2022,
+  `2023` = selected_vars_2023,
+  `2024` = selected_vars_2024
+)
+
+cor_results <- tibble(
+  Year = names(yearly_data),
+  Correlation = map_dbl(yearly_data, ~ cor(.x$`QB Rating`, .x$Wins, use = "complete.obs"))
+)
+
+ggplot(cor_results, aes(x = as.numeric(Year), y = Correlation)) +
+  geom_line(color = "blue", linewidth = 1) + geom_smooth(method = "lm", se = TRUE, color = "red", linetype = "dashed") +
+  geom_point(size = 3, color = "darkblue") +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray") +
+  scale_x_continuous(breaks = 2015:2024) +
+  labs(
+    title = "Correlation Between QB Rating and Wins (2015–2024)",
+    x = "Year",
+    y = "Correlation Coefficient"
+  ) +
+  theme_minimal()
+
+cor_results <- tibble(
+  Year = names(yearly_data),
+  Correlation = map_dbl(yearly_data, ~ cor(.x$`Tunrover Differential`, .x$Wins, use = "complete.obs"))
+)
+
+ggplot(cor_results, aes(x = as.numeric(Year), y = Correlation)) +
+  geom_line(color = "blue", linewidth = 1) + geom_smooth(method = "lm", se = TRUE, color = "red", linetype = "dashed") +
+  geom_point(size = 3, color = "darkblue") +
+  geom_hline(yintercept = 0, linetype = "dashed", color = "gray") +
+  scale_x_continuous(breaks = 2015:2024) +
+  labs(
+    title = "Correlation Between Turnover Differential and Wins (2015–2024)",
+    x = "Year",
+    y = "Correlation Coefficient"
+  ) +
+  theme_minimal()
+```
+Analysis:
+These graphs I think show that there is an argument to be made that over the last ten seasons the correlation between QB Rating or performance and wins has increased, and the correlation between having a good turnover differential and wins has slightly decreased. I think that looking at these graphs and data there is an argument to be made that these variables are trending in opposite directions with QB performance becoming more important. However, the data is a relatively small sample size (only ten seasons) and the data within that time from jumps all over the place with only the line of best fit showing the general trends being slightly upward or slightly downward. Visually it could be argued that this data is not super statistically significant, but the P values do indicate that something is going on based on the multiple regression I did above.
+
+Lead/Nutgrpah:
+Ben Johnson, the new head coach of the Chicago Bears, claim that QB success is a better indicator of winning than turnover differential isn't as cut and dry as the coach claims.
+
+An analysis of the correlation between QB rating and winning versus turnover differential, and winning over the past 10 seasons shows that teams with better QB play have generally won a lot, and seem to be winning more and more. Teams that also have a good turnover differential also win a lot, but slightly less in recent years. However, both things are still good indicators of winning football in general.
+
+Main findings/Problems/Reporting Plan:
+- Do I think Ben Johnson's claim that QB success is a better indicator of winning than turnovers? Probably, I think its a valid argument to make.
+- However, this data is too flawed in my opnion to base a whole article on. I'd want to go farther back, probably 20-30 years, and other variables would need to be looked at. Does QBR for instance bare out in the same way as rating does, or is there even another QB stat which needs to be looked at? How do different types of turnovers play in? Do non-QB turnovers ahve an outsized impact on winning? And lastly, like I mentioned above, are these stats just kind of inherently related? Not turning the ball over is massive contributor to a QB having success so maybe this entire argument is kind of reductive.
+- Adding more variables would also improve the models. The models as they currently are, are too all over the place for me to trust, and they would need to be improved for me to confidently report this story.
+- My reporting plan then is too massively increase the amount of data (more seasons going back to the 2000s or even the 1990s) and within that data include more variables like QBR and non-QB turnovers. This I think will bear out in a similar way to what I've already got, I think the results will be similar, but it will be far more rigourous and trustworthy. Then I'm going to try and not just make this a numbers story, but take what I've found to NFL data guys, and maybe even football coaches to see what they have to say, and I could then include their insights and quotes into the story.
+
+
+
